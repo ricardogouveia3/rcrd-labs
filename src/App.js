@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.scss';
+import './App.sass';
 
-import Header from './components/AppHeader'
+import AppHeader from './components/AppHeader'
+import AppMain from './components/AppMain'
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <AppHeader />
+      <AppMain />
     </div>
   );
 }

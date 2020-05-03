@@ -13,7 +13,7 @@ class AppHeader extends React.Component {
 
   render() {
     return (
-      <header>
+      <header className="AppHeader">
         <a href="/" className="content">
           <h1>
             <span>LABS</span>
