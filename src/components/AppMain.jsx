@@ -5,7 +5,7 @@ import styled from "styled-components";
 import AppLabItem from "./cards/AppLabItem";
 
 // Consts
-const API_LABS_ENDPOINT = "https://api.rcrd.me/rcrd/labs";
+const API_LABS_ENDPOINT = "https://api.rcrd.me/labs";
 
 // Styled
 const StyledMain = styled.main`
