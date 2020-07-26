@@ -48,8 +48,8 @@ const AppMain = () => {
   return (
     <StyledMain>
       <StyledList>
-        {labItems.map(item => (
-          <AppLabItem item={item} />
+        {labItems.map((item, index) => (
+          <AppLabItem item={item} key={index} />
         ))}
       </StyledList>
     </StyledMain>
