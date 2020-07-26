@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // Components
@@ -36,32 +36,24 @@ const StyledList = styled.ul`
   list-style-type: none;
 `;
 
-class AppMain extends React.Component {
-  constructor(props) {
-    super(props);
+const AppMain = () => {
+  const [labItems, setLabItems] = useState([]);
 
-    this.state = {
-      labItems: [],
-    };
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     fetch(API_LABS_ENDPOINT)
       .then((response) => response.json())
-      .then((data) => this.setState({ labItems: data }));
-  }
+      .then((data) => setLabItems(data));
+  }, [])
 
-  render() {
-    const labList = this.state.labItems.map((labItem, index) => {
-      return <AppLabItem item={labItem} key={index} />;
-    });
-
-    return (
-      <StyledMain>
-        <StyledList>{labList}</StyledList>
-      </StyledMain>
-    );
-  }
-}
+  return (
+    <StyledMain>
+      <StyledList>
+        {labItems.map(item => (
+          <AppLabItem item={item} />
+        ))}
+      </StyledList>
+    </StyledMain>
+  )
+};
 
 export default AppMain;
