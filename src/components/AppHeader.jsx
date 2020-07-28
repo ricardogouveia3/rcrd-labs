@@ -2,75 +2,97 @@ import React from 'react';
 import styled from 'styled-components'
 
 // Assets
-import darkHeaderBg from './../assets/dark-header-bg.jpg';
-import gradientHeaderCircle from './../assets/gradient-header-circle.png';
 import logo from './../assets/logo-w.svg';
 
 const StyledHeader = styled.header`
-  font-family: "Montserrat", sans-serif;
-  background-image: url(${darkHeaderBg});
-  background-size: cover;
-  height: 100%;
-  width: 40%;
-  min-height: 100vh;
+  background-color: #4f4f4f;
+  padding: 40px;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+`
+
+const StyledContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1100px;
+
+  hr {
+    border: .5px solid #efefef;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 700px) {
+      width: 100%
+    }
+  }
+
+  img {
+    width: 70px;
+  }
 
   @media screen and (max-width: 700px) {
-    width: 100%;
-    min-height: unset;
-    height: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
-const StyledAnchor = styled.a`
-  text-decoration: none;
-  max-width: 100%;
-  padding: 27vh 0;
-  background-image: url(${gradientHeaderCircle});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right -50px center;
+const StyledTextContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 80px;
+
+  p {
+    color: #fff;
+    text-align: left;
+    max-width: 37%;
+    font-weight: 300;
+    font-size: 14px;
+
+    @media screen and (max-width: 700px) {
+      max-width: unset;
+      text-align: center;
+    }
+  }
 
   @media screen and (max-width: 700px) {
-    padding: 5vh;
-    background-size: 100%;
-    background-position: center center;
+    margin-top: 40px;
+    align-items: center;
+    flex-direction: column;
   }
 `
 
 const StyledTitle = styled.h1`
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-`
+  color: #fff;
+  font-family: "Metropolis";
+  font-size: 6vw;
+  margin: 0;
+  line-height: .9;
 
-const StyledSpan = styled.span`
-  color: #ffffff;
-  line-height: 1;
-  font-weight: bolder;
-  font-size: 11.6vw;
-  margin-right: 10px;
-`
-
-const StyledImg = styled.img`
-  width: 110px;
+  span {
+    display: block;
+    color: #11d3b6;
+    letter-spacing: 4px;
+  }
 
   @media screen and (max-width: 700px) {
-    width: 55px
+    font-size: 5em;
   }
 `
+
 const AppHeader = () => (
   <StyledHeader>
-    <StyledAnchor href="/">
-      <StyledTitle>
-        <StyledSpan>LABS</StyledSpan>
-        <StyledImg src={logo} alt="" />
-      </StyledTitle>
-    </StyledAnchor>
+    <StyledContainer>
+      <hr />
+      <img src={logo} alt=''></img>
+      <StyledTextContainer>
+        <StyledTitle>
+          RCRD
+          <span>LABS</span>
+        </StyledTitle>
+        <p>Estes são projetos experimentais e podem conter falhas de responsividade, acessibilidade e qualidade de software em geral. Também podem fazer uso de tecnologias pouco suportadas sem oferecer fallback.</p>
+      </StyledTextContainer>
+    </StyledContainer>
   </StyledHeader>
 )
 

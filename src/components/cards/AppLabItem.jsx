@@ -2,18 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledListItem = styled.li`
-  width: 100%;
   min-height: 50vh;
-  overflow: hidden;
   transition: opacity 0.3s ease;
 
-  &:hover {
-    opacity: 0.9;
-  }
+  &:hover { opacity: 0.9; }
 
-  @media screen and (max-width: 700px) {
-    min-height: 30vh;
-  }
+  @media screen and (max-width: 700px) { min-height: 30vh; }
 `;
 
 const StyledAnchor = styled.a`
@@ -21,14 +15,11 @@ const StyledAnchor = styled.a`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
   height: 100%;
   padding: 20px;
-  justify-content: center;
 
-  &:hover {
-    padding-bottom: 40px;
-  }
+  &:hover { padding-bottom: 40px; }
 `;
 
 const StyledSecondTitle = styled.h2`

@@ -3,34 +3,37 @@ import styled from "styled-components";
 
 // Components
 import AppLabItem from "./cards/AppLabItem";
+import AppSearchBox from "./AppSearchBox";
+
+import DevelopingCoverWarning from "./special/DevelopingCoverWarning";
 
 // Consts
 const API_LABS_ENDPOINT = "https://api.rcrd.me/labs";
 
 // Styled
 const StyledMain = styled.main`
-  display: flex;
-  width: 60%;
-  height: 100vh;
-  max-height: 100%;
-  padding: 35px;
-  padding-left: 0;
-  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 40px;
+  padding: 40px 0;
+`;
 
-  @media screen and (max-width: 700px) {
-    padding: 0;
-    overflow: unset;
-    height: unset;
-    max-height: unset;
-    width: 100%;
+const StyledContainer = styled.div`
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 0 6px 15px -7px rgba(0,0,0,0.22);
+  position: relative;
+
+  @media (max-width: 500px) {
+    padding: 25px;
   }
 `;
 
 const StyledList = styled.ul`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  overflow-y: auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -47,11 +50,17 @@ const AppMain = () => {
 
   return (
     <StyledMain>
-      <StyledList>
-        {labItems.map((item, index) => (
-          <AppLabItem item={item} key={index} />
-        ))}
-      </StyledList>
+      <StyledContainer>
+        <DevelopingCoverWarning />
+        <AppSearchBox />
+      </StyledContainer>
+      <StyledContainer>
+        <StyledList>
+          {labItems.map((item, index) => (
+            <AppLabItem item={item} key={index} />
+          ))}
+        </StyledList>
+      </StyledContainer>
     </StyledMain>
   )
 };

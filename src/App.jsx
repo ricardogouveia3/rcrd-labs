@@ -1,22 +1,15 @@
 import React from 'react';
-import styled from 'styled-components'
 
 import AppHeader from './components/AppHeader'
 import AppMain from './components/AppMain'
-
-const StyledApp = styled.div`
-  display: flex;
-
-  @media screen and (max-width: 700px) {
-    flex-direction: column
-  }
-`;
+import AppFooter from './components/AppFooter'
 
 const App = () => (
-  <StyledApp className="App">
+  <div className="App" style={{backgroundColor: '#E8EAEE'}}>
     <AppHeader />
     <AppMain />
-  </StyledApp>
+    <AppFooter />
+  </div>
 );
 
 export default App;
