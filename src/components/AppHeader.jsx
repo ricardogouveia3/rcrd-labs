@@ -64,7 +64,6 @@ const StyledTextContainer = styled.div`
 
 const StyledTitle = styled.h1`
   color: #fff;
-  font-family: "Metropolis";
   font-size: 6vw;
   margin: 0;
   line-height: .9;
