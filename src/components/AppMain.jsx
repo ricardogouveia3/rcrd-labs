@@ -8,7 +8,7 @@ import AppSearchBox from "./AppSearchBox";
 import DevelopingCoverWarning from "./special/DevelopingCoverWarning";
 
 // Consts
-const API_LABS_ENDPOINT = "https://api.rcrd.me/labs";
+const API_LABS_ENDPOINT = "https://api.rcrd.dev/labs";
 
 // Styled
 const StyledMain = styled.main`
